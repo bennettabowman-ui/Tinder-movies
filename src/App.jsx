@@ -151,7 +151,7 @@ function App() {
   };
 
   return (
-    <div className="relative h-full w-full overflow-hidden" style={{ background: 'var(--bg-primary)' }}>
+    <div className="relative h-full w-full overflow-hidden flex justify-center" style={{ background: 'var(--bg-primary)' }}>
       {/* Ambient background */}
       {availableMovies.length > 0 && (
         <div
@@ -160,8 +160,8 @@ function App() {
         />
       )}
 
-      {/* Main content */}
-      <div className="relative z-10 flex flex-col h-full">
+      {/* Main content — centered container with max width for desktop */}
+      <div className="relative z-10 flex flex-col h-full w-full" style={{ maxWidth: '480px' }}>
         {/* Screen area */}
         <div className="flex-1 overflow-hidden">
           <AnimatePresence mode="wait">

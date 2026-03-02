@@ -315,7 +315,7 @@ export default function MatchHub({ movies, filteredMovies, sessionData, setSessi
             </button>
           </div>
         ) : (
-          <div className="relative w-full h-full max-w-sm mx-auto" style={{ perspective: '1000px' }}>
+          <div className="relative w-full h-full mx-auto" style={{ perspective: '1000px' }}>
             <AnimatePresence>
               {remainingMovies.slice(0, 3).map((movie, index) => {
                 const isTop = index === 0;

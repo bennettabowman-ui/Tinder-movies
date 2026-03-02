@@ -38,7 +38,7 @@ export default function SwipeScreen({ movies, allMovies, onSwipe, onUndo, onShow
   if (loading) {
     return (
       <div className="h-full flex flex-col items-center justify-center px-6">
-        <div className="w-full max-w-sm aspect-[2/3] skeleton rounded-2xl mb-4" />
+        <div className="w-full aspect-[2/3] skeleton rounded-2xl mb-4" style={{ maxWidth: '420px' }} />
         <div className="w-48 h-4 skeleton mb-2" />
         <div className="w-32 h-3 skeleton" />
       </div>
@@ -80,9 +80,9 @@ export default function SwipeScreen({ movies, allMovies, onSwipe, onUndo, onShow
   const visibleCards = movies.slice(0, 3);
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-col items-center">
       {/* Header bar */}
-      <div className="flex items-center justify-between px-5 py-3 flex-shrink-0">
+      <div className="flex items-center justify-between px-5 py-3 flex-shrink-0 w-full">
         <h1 className="text-xl font-bold" style={{ color: 'var(--accent-gold)', fontFamily: 'Playfair Display, serif' }}>
           CineSwipe
         </h1>
@@ -108,8 +108,8 @@ export default function SwipeScreen({ movies, allMovies, onSwipe, onUndo, onShow
       </div>
 
       {/* Card stack area */}
-      <div className="flex-1 relative px-5 pb-2">
-        <div className="relative w-full h-full max-w-sm mx-auto" style={{ perspective: '1000px' }}>
+      <div className="flex-1 relative px-5 pb-2 w-full">
+        <div className="relative w-full h-full mx-auto" style={{ perspective: '1000px' }}>
           <AnimatePresence>
             {visibleCards.map((movie, index) => {
               const isTop = index === 0;
@@ -136,7 +136,7 @@ export default function SwipeScreen({ movies, allMovies, onSwipe, onUndo, onShow
       </div>
 
       {/* Action buttons */}
-      <div className="flex items-center justify-center gap-4 px-5 py-3 flex-shrink-0">
+      <div className="flex items-center justify-center gap-4 px-5 py-3 flex-shrink-0 w-full">
         {/* Undo */}
         <button
           onClick={onUndo}
