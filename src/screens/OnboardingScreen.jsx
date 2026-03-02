@@ -56,7 +56,8 @@ export default function OnboardingScreen({ filters, setFilters, onStart, movieCo
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-md mx-auto"
+        className="mx-auto"
+        style={{ maxWidth: '440px' }}
       >
         {/* Header */}
         <div className="text-center mb-10">
